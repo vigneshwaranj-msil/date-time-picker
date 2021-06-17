@@ -73,13 +73,14 @@ export default class CurrentDate {
     });
   }
 
-  goTo({ date, month, year, hour, min }) {
+  goTo({ date, month, year, hour, min, sec }) {
     date = date || this.date;
     month = month || this.month;
     year = year || this.year;
     hour = hour || this.hour;
     min = min || this.minute;
-    this.currentDate = new Date(year, month - 1, date, hour, min);
+    sec = sec || this.second;
+    this.currentDate = new Date(year, month - 1, date, hour, min, sec);
   }
 
   static getFormattedDateValues(value) {
@@ -98,14 +99,14 @@ export default class CurrentDate {
     )}-${CurrentDate.getFormattedDateValues(this.date)}`;
   }
 
-  toInputTimeString() {
+  toTimeString() {
     return `${CurrentDate.getFormattedDateValues(
       this.hour
     )}:${CurrentDate.getFormattedDateValues(this.minute)}`;
   }
 
-  toTimeString() {
-    return `${this.toInputTimeString()}:${CurrentDate.getFormattedDateValues(
+  toInputTimeString() {
+    return `${this.toTimeString()}:${CurrentDate.getFormattedDateValues(
       this.second
     )}`;
   }

@@ -92,6 +92,15 @@ export function generateTimePickerUI() {
           min: value
         }),
       this.currentDateTime.minute
+    ),
+    generateTimeSelector(
+      0,
+      59,
+      (value) =>
+        timeUpdateFunction({
+          sec: value
+        }),
+      this.currentDateTime.second
     )
   );
   //time wrapper ends here
