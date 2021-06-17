@@ -48,7 +48,7 @@ export default class Picker {
     var inputContainer = this._inputEl.parentElement;
     this.pickerStyle.top =
       inputContainer.offsetTop + 3 + inputContainer.offsetHeight;
-    this.pickerStyle.left = "100%";
+    this.pickerStyle.left = "-100%";
   }
 
   resetPicker() {
