@@ -17,6 +17,7 @@ export default class Picker {
       top: 0,
       left: 0
     };
+    this._changeCallback = this._options.onchange || (value) => {};
 
     this.initializeUI = this.initializeUI.bind(this);
     this.showPicker = this.showPicker.bind(this);
@@ -60,6 +61,7 @@ export default class Picker {
   updateValue(value) {
     if (this._inputEl) {
       this._inputEl.value = value;
+      this._changeCallback(value);
       this.resetPicker();
     }
   }

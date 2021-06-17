@@ -5,7 +5,7 @@ export default class CurrentDate {
     if (!isValidDate(date)) {
       date = new Date();
     }
-    this.currentDate = date;
+    this.currentDate = new Date(date);
 
     this.goTo = this.goTo.bind(this);
     this.goNextMonth = this.goNextMonth.bind(this);

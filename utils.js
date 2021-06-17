@@ -6,5 +6,5 @@ export function isValidDate(date = undefined) {
   } else {
     //do nothing
   }
-  return isNaN(date.getTime());
+  return !isNaN(date.getTime());
 }

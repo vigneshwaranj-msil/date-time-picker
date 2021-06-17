@@ -21,10 +21,12 @@ export function generateDatePickerUI() {
     this.showPicker();
     newValue.date && this.updateValue(this.currentDateTime.toInputDateString());
   };
+  var currentYear = new Date().getFullYear();
+  const YEAR_OFFSET = 5;
   dateMonthYearPicker.append(
     generateSelector(
       1999,
-      new Date().getFullYear(),
+      (this.currentDateTime.year > currentYear ? this.currentDateTime.year : currentYear)+YEAR_OFFSET,
       (value) => valueChangeCallback({ year: value }),
       this.currentDateTime.year
     ),
