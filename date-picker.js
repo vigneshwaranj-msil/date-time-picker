@@ -19,9 +19,10 @@ export default class DatePicker extends Picker {
     super.showPicker();
     if (this._pickerContainer) {
       this._pickerContainer.style.top = `${this.pickerStyle.top}px`;
-      this._pickerContainer.style.left = `${this.pickerStyle.left}px`;
-      this._rootContainer &&
-        this._rootContainer.appendChild(this._pickerContainer);
+      this._pickerContainer.style.left = `${this.pickerStyle.left}`;
+      this._inputEl &&
+        this._inputEl.parentElement && 
+        this._inputEl.parentElement.appendChild(this._pickerContainer);
     }
   }
 

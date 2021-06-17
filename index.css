@@ -7,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   position: relative;
+  color:black;
 }
 
 .default-container {
@@ -112,6 +113,7 @@
   text-transform: capitalize;
   width: 100%;
   height: auto;
+  font-size:2em;
 }
 
 .date-picker .date-wrapper .date-selector .days .active::before {
@@ -138,6 +140,7 @@
 
 .date-picker .date-wrapper .date-selector .dates .date {
   text-align: center;
+  font-size:2em;
 }
 
 .date-picker .date-wrapper .date-selector .dates .active:before {
@@ -192,6 +195,7 @@
 .time-picker .time-wrapper .col .time {
   padding: 1em;
   text-align: center;
+  font-size:2em;
 }
 
 .time-picker .time-wrapper .col .active {

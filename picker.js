@@ -1,4 +1,4 @@
-import CurrentDate from "../date-time-picker-js/current-date";
+import CurrentDate from "./current-date";
 import { DefaultPickerProps } from "./constants";
 import { generateInputContainer } from "./dom-creator";
 
@@ -48,7 +48,7 @@ export default class Picker {
     var inputContainer = this._inputEl.parentElement;
     this.pickerStyle.top =
       inputContainer.offsetTop + 3 + inputContainer.offsetHeight;
-    this.pickerStyle.left = inputContainer.offsetLeft;
+    this.pickerStyle.left = "100%";
   }
 
   resetPicker() {
