@@ -93,9 +93,9 @@ export default class CurrentDate {
   }
 
   toInputDateString() {
-    return `${this.year}/${CurrentDate.getFormattedDateValues(
+    return `${this.year}-${CurrentDate.getFormattedDateValues(
       this.month
-    )}/${CurrentDate.getFormattedDateValues(this.date)}`;
+    )}-${CurrentDate.getFormattedDateValues(this.date)}`;
   }
 
   toInputTimeString() {
