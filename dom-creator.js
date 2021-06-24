@@ -112,6 +112,7 @@ export function generateInputContainer() {
   var inputContainerEl = document.createElement("div");
   inputContainerEl.classList.add(Selectors.defaultContainer);
   var input = document.createElement("input");
+  input.addEventListener("focus", input.blur);
   input.type = "text";
   input.placeholder = "Select the date";
   inputContainerEl.appendChild(input);
