@@ -1,9 +1,10 @@
 import { Days, Selectors, TimeSelectors } from "./constants";
 import CurrentDate from "./current-date";
 
-export function generateDatePickerUI() {
+export function generateDatePickerUI(className) {
   var datePickerEl = document.createElement("div");
   datePickerEl.classList.add(Selectors.main);
+  datePickerEl.classList.add(className || "");
   //Wrapper element container calendar
   var dateWrapper = document.createElement("div");
   dateWrapper.classList.add(Selectors.wrapper);
@@ -65,9 +66,10 @@ export function generateDatePickerUI() {
   return datePickerEl;
 }
 
-export function generateTimePickerUI() {
+export function generateTimePickerUI(className) {
   var timePickerEl = document.createElement("div");
   timePickerEl.classList.add(TimeSelectors.main);
+  timePickerEl.classList.add(className || "");
   var timeWrapper = document.createElement("div");
   const timeUpdateFunction = (value) => {
     this.currentDateTime.goTo(value);
@@ -112,7 +114,7 @@ export function generateInputContainer() {
   var inputContainerEl = document.createElement("div");
   inputContainerEl.classList.add(Selectors.defaultContainer);
   var input = document.createElement("input");
-  input.addEventListener("focus", input.blur);
+  input.readOnly = true;
   input.type = "text";
   input.placeholder = "Select the date";
   inputContainerEl.appendChild(input);
@@ -132,7 +134,7 @@ function generateTimeSelector(
     var timeEl = document.createElement("div");
     timeEl.classList.add(TimeSelectors.time);
     timeEl.innerText = CurrentDate.getFormattedDateValues(i);
-    timeEl.addEventListener("click", function (e) {
+    timeEl.addEventListener("mousedown", function (e) {
       onChange && onChange(parseInt(e.target.innerHTML, 10));
     });
     if (i === activeValue) {
@@ -208,7 +210,7 @@ function generateDateRows(changeCallback = undefined) {
         } else {
           dateEl.innerText = date;
         }
-        dateEl.addEventListener("click", dateCallback);
+        dateEl.addEventListener("mousedown", dateCallback);
         rowEl.append(dateEl);
       }
     }

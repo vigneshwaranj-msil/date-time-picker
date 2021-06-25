@@ -10,14 +10,16 @@ export default class TimePicker extends Picker {
 
   resetPicker() {
     super.resetPicker();
-    this._pickerContainer = generateTimePickerUI.call(this);
+    this._pickerContainer = generateTimePickerUI.call(this, this._options.pickerClass);
   }
 
   showPicker() {
     super.showPicker();
     if (this._pickerContainer) {
       this._pickerContainer.style.top = `${this.pickerStyle.top}px`;
-      this._pickerContainer.style.left = `${this.pickerStyle.left}`;
+      if(this.pickerStyle.left) {
+        this._pickerContainer.style.left = `${this.pickerStyle.left}px`;
+      }
       this._inputEl &&
         this._inputEl.parentElement &&
         this._inputEl.parentElement.appendChild(this._pickerContainer);

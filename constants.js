@@ -22,6 +22,7 @@ export const Selectors = {
   DefaultPickerProps = {
     value: undefined,
     container: undefined,
+    pickerClass: undefined,
     onchange:undefined,
   },
   Days = [
