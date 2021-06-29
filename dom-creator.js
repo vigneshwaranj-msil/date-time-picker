@@ -1,10 +1,11 @@
 import { Days, Selectors, TimeSelectors } from "./constants";
 import CurrentDate from "./current-date";
+import { DropDown } from "./drop-down";
 
 export function generateDatePickerUI(className) {
   var datePickerEl = document.createElement("div");
   datePickerEl.classList.add(Selectors.main);
-  datePickerEl.classList.add(className || "");
+  datePickerEl.classList.add(className || "-");
   //Wrapper element container calendar
   var dateWrapper = document.createElement("div");
   dateWrapper.classList.add(Selectors.wrapper);
@@ -14,12 +15,12 @@ export function generateDatePickerUI(className) {
   yearSelector.classList.add(Selectors.yearSelector);
   var prev = document.createElement("div");
   prev.innerText = "<";
-  prev.addEventListener("click", this.showPrevMonth);
+  prev.addEventListener("mousedown", this.showPrevMonth);
   var dateMonthYearPicker = document.createElement("div");
   dateMonthYearPicker.classList.add(Selectors.selector);
   const valueChangeCallback = (newValue) => {
     this.currentDateTime.goTo(newValue);
-    this.showPicker();
+    !newValue.date && this.__showPickerWithInputFocused();
     newValue.date && this.updateValue(this.currentDateTime.toInputDateString());
   };
   var currentYear = new Date().getFullYear();
@@ -27,7 +28,9 @@ export function generateDatePickerUI(className) {
   dateMonthYearPicker.append(
     generateSelector(
       1999,
-      (this.currentDateTime.year > currentYear ? this.currentDateTime.year : currentYear)+YEAR_OFFSET,
+      (this.currentDateTime.year > currentYear
+        ? this.currentDateTime.year
+        : currentYear) + YEAR_OFFSET,
       (value) => valueChangeCallback({ year: value }),
       this.currentDateTime.year
     ),
@@ -46,7 +49,7 @@ export function generateDatePickerUI(className) {
   );
   var next = document.createElement("div");
   next.innerText = ">";
-  next.addEventListener("click", this.showNextMonth);
+  next.addEventListener("mousedown", this.showNextMonth);
   yearSelector.append(prev, dateMonthYearPicker, next);
   //** year selector ends here
   //date selector begins
@@ -69,7 +72,7 @@ export function generateDatePickerUI(className) {
 export function generateTimePickerUI(className) {
   var timePickerEl = document.createElement("div");
   timePickerEl.classList.add(TimeSelectors.main);
-  timePickerEl.classList.add(className || "");
+  timePickerEl.classList.add(className || "-");
   var timeWrapper = document.createElement("div");
   const timeUpdateFunction = (value) => {
     this.currentDateTime.goTo(value);
@@ -146,29 +149,22 @@ function generateTimeSelector(
   return timeCol;
 }
 
+function generateRange(start, end) {
+  if (start === end) return [start];
+  else return Object.assign([], [start, ...generateRange(start + 1, end)]);
+}
+
 function generateSelector(
   start,
   end,
   changeCallback = undefined,
   activeValue = undefined
 ) {
-  var selectorEl = document.createElement("select");
-  activeValue = activeValue || start;
-  for (var i = start; i <= end; i++) {
-    var option = document.createElement("option");
-    option.value = i;
-    option.selected = activeValue === i;
-    option.innerText = i;
-    selectorEl.appendChild(option);
-  }
-  selectorEl.addEventListener("change", (e) => {
-    var value = e.target.value;
-    if (typeof value === "string") {
-      value = parseInt(value, 10);
-    }
-    changeCallback && changeCallback(value);
-  });
-  return selectorEl;
+  return new DropDown({
+    values: generateRange(start, end),
+    active: activeValue,
+    onChange: (v) => changeCallback(parseInt(v, 10))
+  }).selectorEl;
 }
 
 function generateDaysRow() {

@@ -7,7 +7,7 @@
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  color:black;
+  color: black;
 }
 
 .default-container {
@@ -32,7 +32,7 @@
   height: var(--hg);
   border: 1px solid black;
   z-index: 1;
-  font-size:16px;
+  font-size: 16px;
 }
 
 .date-picker .disable {
@@ -99,7 +99,7 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(7, 1fr);
-  border: 1px solid black;
+  border: 0.2px solid black;
   height: auto;
   justify-content: space-around;
   cursor: pointer;
@@ -163,7 +163,7 @@
   background-color: whitesmoke;
   box-shadow: 10px 10px 10px lightgray;
   z-index: 1;
-  font-size:16px;
+  font-size: 16px;
 }
 
 .time-picker .time-wrapper {
@@ -199,4 +199,6 @@
 
 .time-picker .time-wrapper .col .active {
   background-color: blue;
+  color: white;
+  font-weight: bold;
 }

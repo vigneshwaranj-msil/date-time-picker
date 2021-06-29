@@ -23,7 +23,7 @@ export const Selectors = {
     value: undefined,
     container: undefined,
     pickerClass: undefined,
-    onchange:undefined,
+    onchange: undefined
   },
   Days = [
     "sunday",
