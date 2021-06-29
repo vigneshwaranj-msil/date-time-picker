@@ -5,6 +5,18 @@ export default class TimePicker extends Picker {
   constructor(_options = undefined) {
     super(_options);
 
+    const time = ["hour", "min", "sec"];
+    var values = this._options.value
+      ? this._options.value.split(":")
+      : undefined;
+    if (values && values.length) {
+      var obj = {};
+      values.forEach((v, i) => {
+        obj[time[i]] = parseInt(v, 10);
+      });
+      this.currentDateTime.goTo(obj);
+    }
+
     this.initializeUI();
   }
 
