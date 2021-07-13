@@ -1,0 +1,21 @@
+.default-container {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  position: relative;
+}
+.default-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.default-container input {
+  height: 100%;
+  font-weight: bold;
+  position: relative;
+  outline: none;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  padding: 5px;
+}

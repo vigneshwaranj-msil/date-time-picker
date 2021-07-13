@@ -1,3 +1,2 @@
-import "./index.css";
-export { default as DatePicker } from "./date-picker";
-export { default as TimePicker } from "./time-picker";
+export {TimePicker} from "./time-picker";
+export {DatePicker} from "./date-picker";

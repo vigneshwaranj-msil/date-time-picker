@@ -1,0 +1,21 @@
+.selector-container * {
+  position: relative;
+  box-sizing: border-box;
+}
+.selector-container .option-and-value .title-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0; */
+}
+.selector-container .option-and-value .title-container .value {
+  font-weight: bold;
+  font-size: 15px;
+}
+.selector-container .option-and-value .title-container .value_m {
+  font-weight: bold;
+  font-size: 30px;
+  color: grey;
+}

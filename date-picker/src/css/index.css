@@ -1,0 +1,115 @@
+/*Date picker*/
+.date-picker {
+  --wd: 300px;
+  --hg: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--wd);
+  height: var(--hg);
+  z-index: 1;
+  font-size: 13px;
+}
+
+.date-picker .date-wrapper {
+  --fr: minmax(0, 1fr);
+  position: relative;
+  width: 100%;
+  background-color: white;
+  height: 100%;
+  display: grid;
+  grid-template-columns: var(--fr);
+  grid-template-rows: auto var(--fr);
+  grid-gap: 10px;
+  padding: 15px;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px lightgrey;
+}
+
+.date-picker .date-wrapper .year-selector {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: auto auto var(--fr) auto auto;
+  grid-gap: 10px;
+  align-items: center;
+  /* padding: 0.5em; */
+}
+.date-picker .date-wrapper .year-selector .prev1 {
+  background-color: lightgrey;
+  border-radius: 45%;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.date-picker .date-wrapper .year-selector .prev {
+  background-color: lightgrey;
+  border-radius: 45%;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.date-picker .date-wrapper .year-selector .selector {
+  background-color: white;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: var(--fr);
+  grid-template-rows: repeat(2, var(--fr));
+}
+
+.date-picker .date-wrapper .date-selector {
+  display: grid;
+  grid-template-columns: var(--fr);
+  grid-template-rows: auto var(--fr);
+  width: 100%;
+  height: 100%;
+}
+.date-picker .date-wrapper .date-selector .row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(7, 1fr);
+  /* border: 0.2px solid black; */
+  height: auto;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.date-picker .date-wrapper .date-selector .dates .date:hover {
+  background-color: lightgrey;
+  border-radius: 45%;
+}
+.date-picker .date-wrapper .date-selector .days .day {
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  height: auto;
+}
+.date-picker .date-wrapper .date-selector .dates {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.date-picker .date-wrapper .date-selector .row {
+  padding-top: 10px;
+  height: 100%;
+  width: 100%;
+}
+.date-picker .date-wrapper .date-selector .dates .date {
+  text-align: center;
+}
+.date-picker .date-wrapper .date-selector .dates .active {
+  background-color: rosybrown;
+  border: 1px solid rosybrown;
+  border-radius: 50%;
+}
+.date-picker .date-wrapper .date-selector .dates .active:before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 90%;
+}

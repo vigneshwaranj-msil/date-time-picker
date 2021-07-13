@@ -1,0 +1,74 @@
+/*Time picker*/
+.time-picker {
+  --size: 200px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  top: 0;
+  left: 0;
+  background-color: blue;
+  box-shadow: 10px 10px 10px lightgray; 
+  z-index: 1;
+  font-size: 16px;
+  padding: 0.5em;
+}
+
+.time-picker .time-wrapper {
+  --fr: minmax(0, 1fr);
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(5, var(--fr));
+  grid-template-rows: var(--fr);
+  padding: 0;
+}
+.time-picker .time-wrapper .seperator {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  margin:auto;
+}
+
+.time-picker .time-wrapper .col {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+
+.time-picker .time-wrapper .col .time {
+  text-align: center;
+  font-display: center;
+  background-color: blue;
+  color: white;
+  font-size: 30px;
+}
+.time-picker .time-wrapper .col .prev {
+  background-color: lightgray;
+  border-radius: 50%;
+  color: rgb(168, 183, 223);
+  text-align: center;
+  cursor: pointer;
+}
+.time-picker .time-wrapper .col .prev:hover {
+  color: white;
+}
+.time-picker .time-wrapper .col .next {
+  background-color: lightgray;
+  color: rgb(168, 183, 223);
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.time-picker .time-wrapper .col .next:hover {
+  color: white;
+}
