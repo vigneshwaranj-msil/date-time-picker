@@ -39,12 +39,17 @@
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: auto auto var(--fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) var(--fr) minmax(0, 1fr) minmax(
+      0,
+      1fr
+    );
+  /* grid-template-columns: auto auto var(--fr) auto auto; */
   grid-gap: 4px;
   align-items: center;
 }
 
 .date-picker .date-wrapper .year-selector .move {
+  text-align: center;
   background-color: lightgrey;
   border-radius: 45%;
   padding: 20%;
