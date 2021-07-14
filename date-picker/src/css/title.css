@@ -8,14 +8,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 0; */
 }
 .selector-container .option-and-value .title-container .value {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 13px;
 }
 .selector-container .option-and-value .title-container .value_m {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 18px;
   color: grey;
 }

@@ -1,14 +1,23 @@
-/*Date picker*/
+.date-picker *,
+.default-container {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  position: relative;
+  color: black;
+}
+
 .date-picker {
-  --wd: 300px;
-  --hg: 300px;
+  --wd: 190px;
+  --hg: 200px;
   position: absolute;
   top: 0;
   left: 0;
   width: var(--wd);
   height: var(--hg);
   z-index: 1;
-  font-size: 13px;
+  font-size: 10px;
+  color: black;
 }
 
 .date-picker .date-wrapper {
@@ -20,8 +29,7 @@
   display: grid;
   grid-template-columns: var(--fr);
   grid-template-rows: auto var(--fr);
-  grid-gap: 10px;
-  padding: 15px;
+  padding: 3%;
   border: 1px solid lightgray;
   border-radius: 15px;
   box-shadow: 10px 10px 10px lightgrey;
@@ -32,22 +40,14 @@
   height: auto;
   display: grid;
   grid-template-columns: auto auto var(--fr) auto auto;
-  grid-gap: 10px;
+  grid-gap: 4px;
   align-items: center;
-  /* padding: 0.5em; */
 }
-.date-picker .date-wrapper .year-selector .prev1 {
+
+.date-picker .date-wrapper .year-selector .move {
   background-color: lightgrey;
   border-radius: 45%;
-  padding: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.date-picker .date-wrapper .year-selector .prev {
-  background-color: lightgrey;
-  border-radius: 45%;
-  padding: 5px;
-  cursor: pointer;
+  padding: 20%;
   font-weight: bold;
 }
 
@@ -71,7 +71,6 @@
   display: grid;
   width: 100%;
   grid-template-columns: repeat(7, 1fr);
-  /* border: 0.2px solid black; */
   height: auto;
   justify-content: space-around;
   cursor: pointer;
@@ -93,7 +92,6 @@
   flex-direction: column;
 }
 .date-picker .date-wrapper .date-selector .row {
-  padding-top: 10px;
   height: 100%;
   width: 100%;
 }

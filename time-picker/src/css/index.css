@@ -1,58 +1,72 @@
+.default-container,
+.time-picker * {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  position: relative;
+}
+
 /*Time picker*/
 .time-picker {
-  --size: 200px;
+  --size: 150px;
+  --size_hight: 92px;
   position: absolute;
   width: var(--size);
-  height: var(--size);
+  height: var(--size_hight);
   top: 0;
   left: 0;
+  padding: 5%;
+  align-content: center;
   background-color: blue;
-  box-shadow: 10px 10px 10px lightgray; 
   z-index: 1;
-  font-size: 16px;
-  padding: 0.5em;
 }
 
 .time-picker .time-wrapper {
-  --fr: minmax(0, 1fr);
+  /* --fr: minmax(0, 3fr); */
   position: relative;
   width: 100%;
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(5, var(--fr));
-  grid-template-rows: var(--fr);
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   padding: 0;
 }
+
 .time-picker .time-wrapper .seperator {
   color: white;
   font-weight: bold;
-  font-size: 30px;
-  text-align: center;
-  margin:auto;
+  font-size: 5em;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .time-picker .time-wrapper .col {
   display: flex;
   flex-direction: column;
+  align-self: center;
   align-content: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
   overflow: hidden;
   overflow-y: auto;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 1.3rem;
   color: white;
 }
 
 .time-picker .time-wrapper .col .time {
+  align-content: center;
+  justify-content: center;
   text-align: center;
   font-display: center;
   background-color: blue;
   color: white;
-  font-size: 30px;
+  font-size: 2rem;
 }
 .time-picker .time-wrapper .col .prev {
+  align-content: center;
+  justify-content: center;
   background-color: lightgray;
   border-radius: 50%;
   color: rgb(168, 183, 223);
@@ -63,6 +77,8 @@
   color: white;
 }
 .time-picker .time-wrapper .col .next {
+  align-content: center;
+  justify-content: center;
   background-color: lightgray;
   color: rgb(168, 183, 223);
   text-align: center;

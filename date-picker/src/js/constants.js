@@ -1,8 +1,8 @@
 export const Selectors = {
-    main: "date-picker", //
-    wrapper: "date-wrapper", //
+    main: "date-picker",
+    wrapper: "date-wrapper",
     dateSelector: "date-selector",
-    yearSelector: "year-selector", //
+    yearSelector: "year-selector",
     selector: "selector",
     row: "row",
     days: "days",
@@ -10,19 +10,19 @@ export const Selectors = {
     active: "active",
     dates: "dates",
     date: "date",
-    defaultContainer: "default-container", //
-    // disable: "disable",
-    prevYear: "prev1",
-    preMonth: "prev",
-    nextMonth: "prev",
-    nextYear: "prev1"
+    defaultContainer: "default-container",
+    move: "move",
+    prevYear: "prev_year",
+    preMonth: "prev_month",
+    nextMonth: "next_month",
+    nextYear: "next_year"
   },
   DefaultPickerProps = {
     value: undefined,
     container: undefined,
     pickerClass: undefined,
     onchange: undefined
-  }, //
+  },
   Days = [
     "SUNDAY",
     "MONDAY",

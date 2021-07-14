@@ -10,7 +10,7 @@ export function generateInputContainer() {
   input.placeholder = " Select Time";
   inputContainerEl.appendChild(input);
   return inputContainerEl;
-} //input box
+}
 
 export function generateTimePickerUI(className) {
   var timePickerEl = document.createElement("div");
@@ -19,7 +19,6 @@ export function generateTimePickerUI(className) {
 
   var timeWrapper = document.createElement("div");
   const timeUpdateFunction = (value) => {
-    // console.info("timeUpdateFunction");
     this.isPickerClicked = true;
     this.currentDateTime.goTo(value);
     !value.time && this.__showPickerWithInputFocused();
@@ -71,7 +70,7 @@ function generateTimeSelector(
 ) {
   activeValue = activeValue || start;
   var timeCol = document.createElement("div");
-  timeCol.classList.add(TimeSelectors.col); //col addedd
+  timeCol.classList.add(TimeSelectors.col);
 
   var up = document.createElement("div");
   up.classList.add("prev");

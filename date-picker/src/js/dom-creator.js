@@ -22,12 +22,12 @@ export function generateDatePickerUI(className) {
     dateSelector = document.createElement("div");
   yearSelector.classList.add(Selectors.yearSelector);
   var prev1 = document.createElement("div");
-  prev1.classList.add(Selectors.prevYear);
+  prev1.classList.add(Selectors.move);
   prev1.innerText = "<<";
   prev1.addEventListener("mousedown", this.showPrevYear);
 
   var prev = document.createElement("div");
-  prev.classList.add(Selectors.preMonth);
+  prev.classList.add(Selectors.move);
   prev.innerText = "< ";
   prev.addEventListener("mousedown", this.showPrevMonth);
 
@@ -58,12 +58,12 @@ export function generateDatePickerUI(className) {
     )
   );
   var next = document.createElement("div");
-  next.classList.add(Selectors.nextMonth);
+  next.classList.add(Selectors.move);
   next.innerText = " >";
   next.addEventListener("mousedown", this.showNextMonth);
 
   var next1 = document.createElement("div");
-  next1.classList.add(Selectors.nextYear);
+  next1.classList.add(Selectors.move);
   next1.innerText = ">>";
   next1.addEventListener("mousedown", this.showNextYear);
   yearSelector.append(prev1, prev, dateMonthYearPicker, next, next1);
@@ -79,12 +79,12 @@ export function generateDatePickerUI(className) {
   dateWrapper.append(yearSelector, dateSelector);
   datePickerElement.appendChild(dateWrapper);
   return datePickerElement;
-} //1
+}
 
 function generateRange(start, end) {
   if (start === end) return [start];
   else return Object.assign([], [start, ...generateRange(start + 1, end)]);
-} //3
+}
 
 function generateSelector(
   start,

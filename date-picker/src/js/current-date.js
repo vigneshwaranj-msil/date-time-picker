@@ -57,21 +57,14 @@ export default class CurrentDate {
   }
 
   goNextMonth() {
-    // var newDate = new Date(this.currentDate.getTime());
-    // newDate.setMonth(this.month);
-    // if (newDate.getTime() <= Date.now()) {
     this.goTo({
       month: this.month + 1
     });
-    //}
   }
   goNextYear() {
-    // var newDate = new Date(this.currentDate.getTime());
-    // if (new Date().getFullYear() > newDate.getFullYear()) {
     this.goTo({
       year: this.year + 1
     });
-    //}
   }
 
   goPrevYear() {
@@ -104,8 +97,8 @@ export default class CurrentDate {
   }
 
   toInputDateString() {
-    return `${this.year} / ${CurrentDate.getFormattedDateValues(
+    return `${this.year}-${CurrentDate.getFormattedDateValues(
       this.month
-    )} / ${CurrentDate.getFormattedDateValues(this.date)}`;
+    )}-${CurrentDate.getFormattedDateValues(this.date)}`;
   }
 }

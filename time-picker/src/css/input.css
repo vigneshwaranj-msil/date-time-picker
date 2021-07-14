@@ -2,12 +2,6 @@
   width: inherit;
   height: inherit;
   display: flex;
-  position: relative;
-}
-.default-container * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 .default-container input {
   height: 100%;
